@@ -49,7 +49,7 @@ def displayScore(playerPoints, computerPoints):
     print("|____________|______________|")
 
 for i in range(userCount):
-    userChoice = input("\nEnter rock, paper or scissor | e to END: ")
+    userChoice = input("\nEnter rock, paper or scissors| e to END: ")
     userChoice = userChoice.lower()
     if(userChoice=='e'):
         print("BYE See you next time...")
