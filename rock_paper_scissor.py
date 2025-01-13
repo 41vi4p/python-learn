@@ -1,12 +1,16 @@
 #voter ID - name age address 2 options register , view voters- print only name and contact number
-
-a = {'rock', 'paper', 'scissor'}
+import random
+a = ['rock', 'paper', 'scissor']
 
 userCount = int(input("How many rounds do you wanna play?? "))
 
-for e in a:
-    f=a
-    break
+def getF():
+    return random.choice(a)
+
+
+
+playerPoints = 0
+computerPoints = 0
 
 def checkSystem(userChoice):
     if userChoice == f:
@@ -37,19 +41,38 @@ def checkSystem(userChoice):
         print("You WIN :[")
         return "player"
     
+def displayScore(playerPoints, computerPoints):
+    print("\nScore:")
+    print(" ___________________________")
+    print("|    PLAYER  |   COMPUTER   |")
+    print("|    "+str(playerPoints)+"       |   "+str(computerPoints)+"          |")
+    print("|____________|______________|")
 
 for i in range(userCount):
-    userChoice = input("Enter rock, paper or scissor: ")
+    userChoice = input("\nEnter rock, paper or scissor | e to END: ")
     userChoice = userChoice.lower()
-    if (userChoice=='rock'):
-        print("I choose ",f)
-        if('ROCK'==f):
-            
-            print("It's a TIE")
-        elif(userChoice=='paper'):
-            print("I choose ",f)
-            if('PAPER'==f):
-                print("")
-        elif(userChoice=='scissor'):
-            print("I choose ",f)
+    if(userChoice=='e'):
+        print("BYE See you next time...")
+        break
+    f= getF()
+    print(f)
+    print("I choose ",f)
+    winner= checkSystem(userChoice)
+    
+    if (winner=='player'):
+        playerPoints +=1
+        print("\nPLAYER WINS\n")
+    elif(winner=='computer'):
+        computerPoints+=1
+        print("\nCOMPUTER WINS\n")
+    elif(winner=='tie'):
+        print("\nTIE")
+    else:
+        print("\nInvalid Input!")
+        
 
+    displayScore(playerPoints,computerPoints)
+    
+        
+        
+        
