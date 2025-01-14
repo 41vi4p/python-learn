@@ -1,6 +1,6 @@
 #voter ID - name age address 2 options register , view voters- print only name and contact number
 import random
-a = ['rock', 'paper', 'scissor']
+a = ['rock', 'paper', 'scissors']
 
 userCount = int(input("How many rounds do you wanna play?? "))
 
