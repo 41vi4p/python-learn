@@ -14,9 +14,9 @@ def withdraw():
             print("Insufficient funds!")
             return
         balance -= amount
-        transactions.append(f"Withdrawn: ${amount:.2f}")
-        print(f"Withdrawn ${amount:.2f} successfully.")
-        print(f"Current balance: ${balance:.2f}")
+        transactions.append(f"Withdrawn: Rs.{amount:.2f}")
+        print(f"Withdrawn Rs.{amount:.2f} successfully.")
+        print(f"Current balance: Rs.{balance:.2f}")
     except ValueError:
         print("Please enter a valid number.")
 
@@ -28,14 +28,14 @@ def credit():
             print("Invalid amount. Please enter a positive number.")
             return
         balance += amount
-        transactions.append(f"Credited: ${amount:.2f}")
-        print(f"Credited ${amount:.2f} successfully.")
-        print(f"Current balance: ${balance:.2f}")
+        transactions.append(f"Credited: Rs.{amount:.2f}")
+        print(f"Credited Rs.{amount:.2f} successfully.")
+        print(f"Current balance: Rs.{balance:.2f}")
     except ValueError:
         print("Please enter a valid number.")
 
 def check_balance():
-    print(f"\nCurrent Balance: ${balance:.2f}")
+    print(f"\nCurrent Balance: Rs.{balance:.2f}")
 
 def show_transactions():
     print("\n=== Transaction History ===")
@@ -47,7 +47,7 @@ def show_transactions():
 
 def main():
     while True:
-        print("\nWelcome to CRCE Bank v"+str(version)+" by 41vi4p")
+        print("\nWelcome to CRCE Bank v"+str(version)+" by 41vi4p\n")
         print("\n=== CRCE Bank ===\n")
         print("1. Withdraw")
         print("2. Credit")
